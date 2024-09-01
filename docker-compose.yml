@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: "./docker/Dockerfile.custom"
+      network: host
     restart: unless-stopped
     container_name: ${FREQTRADE__BOT_NAME:-Example_Test_Account}_${FREQTRADE__EXCHANGE__NAME:-binance}_${FREQTRADE__TRADING_MODE:-futures}-${FREQTRADE__STRATEGY:-NostalgiaForInfinityX4}
     volumes:
